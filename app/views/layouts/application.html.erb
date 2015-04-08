@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Pet Market - Rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+      <div class="row">
+          <div class="large-3 columns">
+              <h1>&nbsp;</h1>
+          </div>
+    <div class="large-9 columns">
+      <ul class="inline-list right">
+        <li><a href="#">home</a></li>
+        <li><a href="#">about us</a></li>
+        <li><a href="#">legal notices</a></li>
+        <li><a href="#">affiliate program</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <%= yield %>
+
+  <%= render "blocks/side_bar" %>
+  <%= render "blocks/footer" %>
+
+  </body>
+</html>
